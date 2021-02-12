@@ -1,8 +1,6 @@
 from django import forms
 from rango.models import Page, Category
 
-# We could add these forms to views.py, but it makes sense to split them off into their own file.
-
 class CategoryForm(forms.ModelForm):
     max_length=200
     name = forms.CharField(max_length=200, help_text="Please enter the category name.")
@@ -32,4 +30,6 @@ class PageForm(forms.ModelForm):
             cleaned_data['url'] = url
         
         return cleaned_data                    
+    
+            
     
